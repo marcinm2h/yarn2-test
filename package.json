@@ -1,9 +1,13 @@
 {
+  "private": true,
   "name": "yarn2-test",
   "dependencies": {
     "cowsay": "^1.4.0"
   },
   "scripts": {
-    "start": "yarn node index.js"
-  }
+    "start": "yarn workspace cli start"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

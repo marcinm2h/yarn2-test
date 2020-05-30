@@ -21,11 +21,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "yarn2-test",
         "reference": "workspace:."
+      },
+      {
+        "name": "cli",
+        "reference": "workspace:packages/cli"
+      },
+      {
+        "name": "core",
+        "reference": "workspace:packages/core"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.vscode\\/pnpify(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["cli", ["workspace:packages/cli"]],
+      ["core", ["workspace:packages/core"]],
       ["yarn2-test", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -55,6 +65,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["cli", [
+        ["workspace:packages/cli", {
+          "packageLocation": "./packages/cli/",
+          "packageDependencies": [
+            ["cli", "workspace:packages/cli"],
+            ["lodash", "npm:4.17.15"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["core", [
+        ["workspace:packages/core", {
+          "packageLocation": "./packages/core/",
+          "packageDependencies": [
+            ["core", "workspace:packages/core"],
+            ["cli", "workspace:packages/cli"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["cowsay", [
         ["npm:1.4.0", {
           "packageLocation": "./.yarn/cache/cowsay-npm-1.4.0-852dd67916-3.zip/node_modules/cowsay/",
@@ -82,6 +112,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/is-fullwidth-code-point-npm-2.0.0-507f56ec71-3.zip/node_modules/is-fullwidth-code-point/",
           "packageDependencies": [
             ["is-fullwidth-code-point", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["lodash", [
+        ["npm:4.17.15", {
+          "packageLocation": "./.yarn/cache/lodash-npm-4.17.15-566d9324f7-3.zip/node_modules/lodash/",
+          "packageDependencies": [
+            ["lodash", "npm:4.17.15"]
           ],
           "linkType": "HARD",
         }]

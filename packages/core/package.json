@@ -1,0 +1,9 @@
+{
+  "name": "core",
+  "dependencies": {
+    "cli": "workspace:*"
+  },
+  "scripts": {
+    "start": "yarn node index.js"
+  }
+}

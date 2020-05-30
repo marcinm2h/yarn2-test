@@ -11,6 +11,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cli@workspace:*, cli@workspace:packages/cli":
+  version: 0.0.0-use.local
+  resolution: "cli@workspace:packages/cli"
+  dependencies:
+    lodash: ^4.17.15
+  languageName: unknown
+  linkType: soft
+
+"core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "core@workspace:packages/core"
+  dependencies:
+    cli: "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "cowsay@npm:^1.4.0":
   version: 1.4.0
   resolution: "cowsay@npm:1.4.0"
@@ -37,6 +53,13 @@ __metadata:
   version: 2.0.0
   resolution: "is-fullwidth-code-point@npm:2.0.0"
   checksum: 3/e1e5284f848ab6885665967cd768292a75022304d4401e78937a68f423047c29bfe87a43a9cdb67a3210fff7bcd5da51469122a0eff59b03261c379e58dbe921
+  languageName: node
+  linkType: hard
+
+"lodash@npm:^4.17.15":
+  version: 4.17.15
+  resolution: "lodash@npm:4.17.15"
+  checksum: 3/aec3fbb7570aa67bda500b8299b1b1821d60646bede87f76a74dfcc7666ab3445267d734ec71424d70809d52ad67a1356fab5ab694a3faa1908d68e9d48f00f5
   languageName: node
   linkType: hard
 

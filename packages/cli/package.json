@@ -1,0 +1,10 @@
+{
+  "name": "cli",
+  "main": "cli.js",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "scripts": {
+    "start": "yarn node index.js"
+  }
+}
