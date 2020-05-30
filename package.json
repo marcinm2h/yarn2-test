@@ -1,3 +1,6 @@
 {
-  "name": "yarn2-test"
+  "name": "yarn2-test",
+  "dependencies": {
+    "cowsay": "^1.4.0"
+  }
 }
